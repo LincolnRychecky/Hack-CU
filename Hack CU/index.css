@@ -52,6 +52,7 @@
 
 /* Body*/
 #body1 {
-  background-image: url("SpinneyMountain.jpeg");
-
+  background-image: url("SouthPlatte.jpg");
+  background-repeat: no-repeat;
+  background-size: 1700px 1500px;
 }
