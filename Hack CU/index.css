@@ -52,6 +52,6 @@
 
 /* Body*/
 #body1 {
-  background-image: "SpinneyMountain.jpeg";
-  background-repeat: repeat-n;
+  background-image: url("SpinneyMountain.jpeg");
+
 }
