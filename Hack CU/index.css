@@ -1,3 +1,4 @@
+/*Navbar */
 .navbar {
     transition: all 0.4s;
 }
@@ -47,4 +48,10 @@
     .navbar .navbar-brand, .navbar .nav-link {
         color: #555;
     }
+}
+
+/* Body*/
+#body1 {
+  background-image: "SpinneyMountain.jpeg";
+  background-repeat: repeat-n;
 }
