@@ -7,10 +7,30 @@
   background-attachment: fixed;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
 .row {
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
+=======
+=======
+>>>>>>> master
+/*cards*/
+
+.card {
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;
+<<<<<<< HEAD
+>>>>>>> master
+=======
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+>>>>>>> master
 }
 
 /* Create four equal columns that sits next to each other */
