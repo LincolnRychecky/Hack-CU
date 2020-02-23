@@ -6,3 +6,17 @@
   background-size: 1700px 1500px;
   background-attachment: fixed;
 }
+
+/*cards
+.card {
+        margin: 0 auto;
+        float: none;
+        margin-bottom: 10px;
+}
+*/
+
+
+.card-img-top {
+    height: 15rem;
+    object-fit: cover;
+}
