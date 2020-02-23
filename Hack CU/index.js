@@ -19,8 +19,9 @@ var selectedFish = "Zebra Mussel";
 
 
 function getNameFromClick(fishName){
-  selectedFish = fishName;
-  console.log(selectedFish);
+  console.log("Hello");
+  localStorage.setItem('selectedFish',fishName);
+  window.location.href = "specificFish.html";
 }
 function display_Name(name) {
   document.getElementById("Species Name").innerHTML = name;
@@ -45,10 +46,9 @@ function GFG_Fun(image) {
 function findFish()
 {
 console.log("We entered find fish:");
-console.log(selectedFish);
   database.collection("InvasiveSpeciesEntries").get().then(function(querySnapshot)
   {querySnapshot.forEach(function(doc){
-    if(doc.exists && doc.data().name == selectedFish)
+    if(doc.exists && doc.data().name == localStorage.getItem('selectedFish'))
     {
       console.log("Document data:", doc.data());
       var post = doc.data();

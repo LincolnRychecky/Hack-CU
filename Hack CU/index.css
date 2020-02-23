@@ -70,3 +70,9 @@
 #body3 {
   background-color: white;
 }
+
+.btn-primary-outline {
+  background-color: transparent;
+  border-color: #ccc;
+
+}
