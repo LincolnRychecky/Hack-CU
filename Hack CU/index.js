@@ -70,3 +70,55 @@ console.log("We entered find fish:");
   });
 
 }
+
+function submitClick(){
+
+    database.collection("Aquatics Reports").add({
+        email: document.getElementById("email").value,
+        firstName: document.getElementById("fname").value,
+        lastName: document.getElementById("lname").value,
+        date: document.getElementById("date").value,
+        time: document.getElementById("time").value,
+        contact: document.getElementById("yes").checked,
+        coordinates: document.getElementById("coordinates").value,
+        specificLoc: document.getElementById("specifics").value,
+        waterBody: document.getElementById("waterBody").value,
+        species: document.getElementById("species").value,
+        description: document.getElementById("description").value,
+
+    })
+    .then(function() {
+        console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+}
+
+function loadTable(){
+  var num = 0;
+  console.log("We entered loadTable");
+    database.collection("Aquatics Reports").get().then(function(querySnapshot)
+    {querySnapshot.forEach(function(doc){
+      if(doc.exists)
+      {
+        console.log("Document data:", doc.data());
+        var tab1 = document.getElementById("table1");
+        var post = doc.data();
+        var row = tab1.insertRow(num);
+        var celli = row.insertCell(0);
+        var cell1 = row.insertCell(1);
+        var cell2 = row.insertCell(2);
+        var cell3 = row.insertCell(3);
+
+        cell1.innerHTML = post.species;
+        cell2.innerHTML = post.date;
+        cell3.innerHTML = post.waterBody;
+        celli.innerHTML = num;
+        num = num + 1;
+
+      }
+
+      });
+    });
+}
