@@ -15,66 +15,56 @@ firebase.initializeApp(firebaseConfig); //creating instance of firebase
 var database = firebase.firestore();
 var docRef = database.collection("Aquatics Reports");
 
+var selectedFish = "";
 
-function addEvent()
-{
-  console.log("Hello")
-  //ADD A header
-  var headTop = document.createElement("h1");
-  headTop.innerHTML = "smallmouth Bass";
-  document.getElementById("speciesCard").appendChild(headTop);
-
-  // //Create card
-  // let card = document.createElement("div");
-  // card.className = 'card';
-  //
-  // //Add card body
-  // let cardBody = document.createElement('div');
-  // card.appendChild(cardBody);
-  // cardBody.className = 'card-header';
-  //
-  // //Add title
-  // let cardTitle = document.createElement('h5');
-  // cardTitle.innerHTML = title;
-  // cardBody.appendChild(cardTitle);
-  //
-  // //Add description
-  // let desc = document.createElement('p');
-  // card.appendChild(desc);
-  // desc.innerText = description;
-  // cardBody.appendChild(desc);
-  //
-  // //Add user contact info
-  // // <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-  // //   Button with data-target
-  // // </button>
-  //
-  // let info = document.createElement('p');
-  // card.appendChild(info);
-  // info.innerText = contact;
-  // cardBody2.appendChild(info);
-  //
-  // return card;
+function getNameFromClick(fishName){
+  selectedFish = fishName;
+  console.log(selectedFish);
+}
+function display_Name(name) {
+  document.getElementById("Species Name").innerHTML = name;
+}
+function display_Description(description) {
+  document.getElementById("Species Description").innerHTML = description;
+}
+function display_Problem(problem) {
+  document.getElementById("Problem").innerHTML = problem;
+}
+function display_waterSheds(waterSheds) {
+  document.getElementById("Water Sheds").innerHTML = waterSheds;
 }
 
-// function findFish(searchName)
-// {
-//
-//   database.collection("InvasiveSpeciesEntries").get().then(function(querySnapshot)
-//   {querySnapshot.forEach(function(doc){
-//     if(doc.exists && doc.data().name == )
-//     {
-//       console.log("Document data:", doc.data());
-//       var post = doc.data();
-//       var name = post.name;
-//       var description = post.description;
-//       var problem = post.problem;
-//       var waterSheds = post.waterSheds;
-//       var card1 = addPosting(name, description, problem, waterSheds);
-//       document.getElementById('speciesCard').appendChild(card1);
-//     }
-//
-//     });
-//   });
-//
-// }
+function GFG_Fun(image) {
+  var img = document.createElement("img");
+  img.src = image;
+  var src = document.getElementById("header");
+  src.appendChild(img);
+}
+
+function findFish()
+{
+
+  database.collection("InvasiveSpeciesEntries").get().then(function(querySnapshot)
+  {querySnapshot.forEach(function(doc){
+    if(doc.exists && doc.data().name == selectedFish)
+    {
+      console.log("Document data:", doc.data());
+      var post = doc.data();
+      var name = post.name;
+      var description = post.description;
+      var problem = post.problem;
+      var waterSheds = post.waterSheds;
+      var image = post.image;
+
+      display_Name(name);
+      display_Description(description);
+      display_Problem(problem);
+      display_waterSheds(waterSheds);
+      GFG_Fun(image);
+
+    }
+
+    });
+  });
+
+}
