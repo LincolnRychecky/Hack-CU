@@ -70,3 +70,28 @@ console.log("We entered find fish:");
   });
 
 }
+
+function submitClick(){
+
+    database.collection("Aquatics Reports").add({
+        email: document.getElementById("email").value,
+        firstName: document.getElementById("fname").value,
+        lastName: document.getElementById("lname").value,
+        date: document.getElementById("date").value,
+        time: document.getElementById("time").value,
+        contact: document.getElementById("yes").checked,
+        coordinates: document.getElementById("coordinates").value,
+        specificLoc: document.getElementById("specifics").value,
+        waterBody: document.getElementById("waterBody").value,
+        species: document.getElementById("species").value,
+        description: document.getElementById("description").value,
+
+    })
+    .then(function() {
+        console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+    
+}
