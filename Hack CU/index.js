@@ -15,7 +15,7 @@ firebase.initializeApp(firebaseConfig); //creating instance of firebase
 var database = firebase.firestore();
 var docRef = database.collection("Aquatics Reports");
 
-var selectedFish = "";
+var selectedFish = "Northern Pike";
 
 function getNameFromClick(fishName){
   selectedFish = fishName;
@@ -43,7 +43,8 @@ function GFG_Fun(image) {
 
 function findFish()
 {
-
+console.log("We entered find fish:");
+console.log(selectedFish);
   database.collection("InvasiveSpeciesEntries").get().then(function(querySnapshot)
   {querySnapshot.forEach(function(doc){
     if(doc.exists && doc.data().name == selectedFish)
