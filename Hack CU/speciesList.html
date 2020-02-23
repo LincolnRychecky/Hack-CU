@@ -28,24 +28,8 @@
 
     <!-- TODO: Add SDKs  for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries firebase optional add on links and functionality-->
-    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
-
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyDZkphKGDOGFqEShcoySi39tFB7BtAR0CY",
-        authDomain: "invasive-species-reporter.firebaseapp.com",
-        databaseURL: "https://invasive-species-reporter.firebaseio.com",
-        projectId: "invasive-species-reporter",
-        storageBucket: "invasive-species-reporter.appspot.com",
-        messagingSenderId: "198911272608",
-        appId: "1:198911272608:web:595d186746e2b1f94ccbc5",
-        measurementId: "G-4571BBW3QX"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig); //creating instance of firebase
-      firebase.analytics();
-    </script>
+         <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
 
     <!-- Navbar
     <header class="header">
@@ -167,6 +151,7 @@
 
 
 
-
+  <!-- User JavaScript -->
+  <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
