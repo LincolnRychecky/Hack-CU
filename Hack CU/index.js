@@ -15,7 +15,8 @@ firebase.initializeApp(firebaseConfig); //creating instance of firebase
 var database = firebase.firestore();
 var docRef = database.collection("Aquatics Reports");
 
-var selectedFish = "Northern Pike";
+var selectedFish = "Zebra Mussel";
+
 
 function getNameFromClick(fishName){
   selectedFish = fishName;
