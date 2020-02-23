@@ -30,16 +30,17 @@
 
 
 </head>
-  <body id = "body3" onload="display_Description(); display_Name(); display_Problem(); display_waterSheds(); GFG_Fun();">
+  <body id = "body3" onload="findFish();">
     <!-- Firebase -->
     <!-- The core Firebase JS SDK is always required and must be listed first: Firebase connection for functionality -->
     <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
 
     <!-- TODO: Add SDKs  for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries firebase optional add on links and functionality-->
-    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+         <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
 
-    <script>
+    <!-- <script>
       // Your web app's Firebase configuration
       var firebaseConfig = {
         apiKey: "AIzaSyDZkphKGDOGFqEShcoySi39tFB7BtAR0CY",
@@ -54,7 +55,7 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig); //creating instance of firebase
       firebase.analytics();
-    </script>
+    </script> -->
 
 
 
